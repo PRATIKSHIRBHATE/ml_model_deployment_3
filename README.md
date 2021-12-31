@@ -1,2 +1,2 @@
-# ml_model_deployment_3
-Docker containerized flask application and deploy it on google cloud run
+# ml_model_deployment_1
+This repository contains the machine learning model pickle file and flask api deployment on Heroku platform

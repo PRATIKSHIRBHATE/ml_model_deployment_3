@@ -1,0 +1,56 @@
+
+
+# Install docker desktop and WSL
+# Install Ubuntu 20.04 in WSL
+
+# Sign Up to get dockerid, pwd, also sign up on docker Hub -> verify the email address
+
+# From the command line promp
+# docker build --tag ml-deployment-app .
+
+# Once the docker image is built, we can run it
+# docker run --name ml-deployment-app -p 5000:5000 ml-deployment-app
+
+# Use postman to access the application
+http://localhost:5000/predict
+http://127.0.0.1:5000/predict
+Raw Request: {"experience":15, "test_score":20, "interview_score":15}
+
+# Tag the image before pushing
+#ex. docker tag firstimage YOUR_DOCKERHUB_NAME/firstimage
+# docker tag ml-deployment-app pratikshirbhate/ml-deployment-app
+
+
+# Push the docker image to docker hub
+# docker push pratikshirbhate/ml-deployment-app
+# In case docker push failed try login to docker using cmd
+# docker login -u docker_user_name
+
+# Deploy the image to Google Cloud Run
+# Its a serverless environment to run containers on Google Cloud Platform
+# https://console.cloud.google.com/run
+
+# Push Docker images to Google Container Registry (GCR) before they can be deployed on Cloud Run.
+# Do this by running some commands on Cloud Shell.
+
+# Enable Google Container Registry (GCR) (use Cloud Shell from https://console.cloud.google.com/run)
+# Run below command on google cloud shell
+# gcloud services enable containerregistry.googleapis.com
+# docker pull <docker-id>/<image-name>
+# docker tag <docker-id>/<image-name> gcr.io/<project-id>/<image-name>
+# docker push gcr.io/<project-id>/<image-name>
+		<docker-id> — Docker Hub ID or Username
+		<image-name> — Image name
+		<project-id> — GCP project ID
+
+# Create Service on the Cloud Run page. Select the image you just pushed.
+# Click on the Advanced Settings toggle to configure the container’s port number as defined earlier
+Click Next and select Allow unauthenticated invocations to make the deployment public.
+After some minutes, your service would be deployed and a URL would be generated.
+You can click on the service on the Cloud Run page to access its properties and generated URL.
+
+
+# Reference
+https://www.geeksforgeeks.org/dockerize-your-flask-app/
+
+https://medium.com/google-developer-experts/building-a-flask-app-using-docker-and-deploy-to-google-cloud-run-8f311ad36040

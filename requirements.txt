@@ -1,0 +1,7 @@
+Flask
+marshmallow
+numpy
+pandas
+scikit-learn
+
+

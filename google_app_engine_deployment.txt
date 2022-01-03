@@ -1,0 +1,19 @@
+# Rename the app.py to main.py
+# Create a file called app.yaml
+# Edit it with runtime: python38
+
+# Download and install google cloud paltform sdk
+# Google search cloud console
+# Create new project PROJECT_ID and enable billing
+
+# open google cloud sdk on your machine
+# check if its installed properly with command
+# gcloud --version
+# gcloud auth login
+# gcloud config set project PROJECT_ID
+# gcloud app deploy
+# Copy the URL from command prompt
+# gcloud app browse -> check if you are getting any error like bad request
+# gcloud app logs tail
+
+
